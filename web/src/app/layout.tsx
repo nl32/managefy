@@ -1,6 +1,9 @@
 import "src/styles/globals.css";
 
 import { Inter } from "next/font/google";
+import { cookies } from "next/headers";
+
+import { TRPCReactProvider } from "src/trpc/react";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -20,7 +23,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`font-sans ${inter.variable}`}>{children}</body>
+      <body className={`font-sans ${inter.variable}`}>
+        <TRPCReactProvider cookies={cookies().toString()}>
+          <div className="max-h-screen overflow-y-scroll">{children}</div>
+        </TRPCReactProvider>
+      </body>
     </html>
   );
 }
