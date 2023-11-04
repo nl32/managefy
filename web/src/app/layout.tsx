@@ -25,7 +25,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`font-sans ${inter.variable}`}>
         <TRPCReactProvider cookies={cookies().toString()}>
-          {children}
+          <div className="max-h-screen overflow-y-scroll">{children}</div>
         </TRPCReactProvider>
       </body>
     </html>
