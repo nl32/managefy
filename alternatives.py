@@ -1,11 +1,9 @@
 import openai
 import os
+import json
 
-def maker(input):
-  openai.api_key = "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"
-  # item = ''.join(input)
-  item = "Aquafina Water Bottle"
-  price = "$1.99"
+def maker(item, price):
+  openai.api_key = "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"
   response = openai.Completion.create(
     engine="text-davinci-003",
     prompt= """Given the name of the item in paranthesis ("""+ item +"""), and the price in parenthesis ("""+ price + """),
@@ -17,11 +15,22 @@ def maker(input):
     max_tokens=1024
   )
   chatgpt_response = response.choices[0].text.strip()
-  print(f"\n\n{chatgpt_response}\n\n")
   split = chatgpt_response.split(' : ')
-  print(split)
 
-  return 0
+  originalItem = [item, price]
+
+  AlternativeItemDict = {}
+  AlternativeItemDict[item] = price
+
+  for i in range(0, len(split), 2):
+      if i + 1 < len(split): 
+          even_value = split[i]
+          odd_value = split[i + 1]
+          AlternativeItemDict[even_value] = odd_value
+
+  print(AlternativeItemDict)
+  return(AlternativeItemDict)
+
 
 if __name__ == "__main__":
-  maker("hello")
+  maker("Aquafina Water Bottle", "$1.99")

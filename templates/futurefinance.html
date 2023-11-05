@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); 
+            grid-gap: 10px; 
+        }
+
+        .grid-item {
+            padding: 10px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div class="grid-container">
+        {% for key, value in data.items() %}
+        <div class="grid-item">{{ key }}</div> <!-- Display the key in the first column -->
+        <div class="grid-item">{{ value }}</div> <!-- Display the value in the second column -->
+        <div class="grid-item">Column 3</div> <!-- Example of the third column -->
+        {% endfor %}
+    </div>
+</body>
+</html>
