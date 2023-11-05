@@ -32,10 +32,14 @@ def list_post():
     item = request.form['itemName']
     price = request.form['itemPrice']
     global_dict = maker(item, price)
+    arr = []
+    with open("data.json", "r", encoding="utf8") as json_file:
+        arr = json.load(json_file)
+    arr.append(global_dict)
     print("Rout List: ")
     print(global_dict)
     with open("data.json", "w", encoding="utf8") as json_file:
-        json.dump(global_dict, json_file, ensure_ascii=True)
+        json.dump(arr, json_file, ensure_ascii=True)
     return global_dict
 
 # --------------------------------------------------------------------------DASHBOARD
@@ -57,9 +61,10 @@ def login():
 
 @app.route('/futurefinance')
 def futurefinance():
+    arr = []
     with open("data.json", "r", encoding="utf8") as json_file:
-        global_dict = json.load(json_file)
-    return render_template('futurefinance.html', data=global_dict)
+        arr = json.load(json_file)
+    return render_template('futurefinance.html', data=arr)
 
 # --------------------------------------------------------------------------CHATBOT FUNCTION
 
