@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Item Alternatives</title>
+    <style>
+        body {
+            font-family: 'Comfortaa', sans-serif;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 32px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 20px;
+        }
+
+        input{
+            text-align: center;
+            font-weight: bold;
+            font-size: 18px; 
+            padding: 10px;
+            margin: 10px;
+            width: 200px;
+            height: 40px;
+            border-radius: 20px
+        }
+
+        label {
+            display: none;
+        }
+
+        button#getAlternatives {
+            padding: 10px;
+            margin: 10px;
+        }
+
+        h2 {
+            font-size: 20px;
+        }
+
+        div#alternatives {
+            display: flex;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Item Alternatives</h1>
+    <form method = "post">
+        <input type="text" name="itemName" required placeholder="Item Name">
+        <input type="number" name="itemPrice" required placeholder="Item Price">
+        <input type="submit">
+    </form>
+    <h2>Choose an Alternative:</h2>
+
+
+
+
+    <script>
+    </script>
+</body>
+</html>
