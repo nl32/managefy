@@ -110,7 +110,7 @@ button[type="submit"] {
         const form = document.getElementById("chat-form");
 const input = document.getElementById("chat-input");
 const messages = document.getElementById("chat-messages");
-const apiKey = "##########################";
+const apiKey = "##";
 
 form.addEventListener("submit", async (e) => {
   e.preventDefault();
@@ -118,7 +118,7 @@ form.addEventListener("submit", async (e) => {
   input.value = "";
 
   messages.innerHTML += `<div class="message user-message">
-  <img src="https://media.discordapp.net/attachments/1163669566442979451/1170757797546295457/DataFy.png?ex=655a342a&is=6547bf2a&hm=1d91692ebbb3a52b6e2475571e12dfeb34ba46bcf50221a0e7e7d5a640dfe5c0&=&width=575&height=575" alt="user icon"> <span>${message}</span>
+  <img src="https://cdn-icons-png.flaticon.com/512/16/16480.png" alt="user icon"> <span>${message}</span>
   </div>`;
 
   // Use axios library to make a POST request to the OpenAI API
@@ -143,7 +143,7 @@ form.addEventListener("submit", async (e) => {
   const chatbotResponse = response.data.choices[0].text;
 
   messages.innerHTML += `<div class="message bot-message">
-  <img src="https://media.discordapp.net/attachments/1163669566442979451/1170757797546295457/DataFy.png?ex=655a342a&is=6547bf2a&hm=1d91692ebbb3a52b6e2475571e12dfeb34ba46bcf50221a0e7e7d5a640dfe5c0&=&width=575&height=575" alt="bot icon"> <span>${chatbotResponse}</span>--------------------------
+  <img src="https://media.discordapp.net/attachments/1163669566442979451/1170757797546295457/DataFy.png?ex=655a342a&is=6547bf2a&hm=1d91692ebbb3a52b6e2475571e12dfeb34ba46bcf50221a0e7e7d5a640dfe5c0&=&width=575&height=575" alt="bot icon"> <span>${chatbotResponse}</span>
   </div>`;
 });
     </script>
