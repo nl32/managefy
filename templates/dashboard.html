@@ -1,9 +1,90 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(-45deg, #C6D8D3, #F0544F, #D81E5B);
+            background-size: 400% 400%;
+            animation: gradientAnimation 6s linear 1 forwards;
+        }
+
+        @keyframes gradientAnimation {
+            0% {
+                background: linear-gradient(-45deg, #C6D8D3, #F0544F, #D81E5B);
+                background-size: 400% 400%;
+                background-position: 0% 50%;
+            }
+            100% {
+                background: linear-gradient(-45deg, #C6D8D3, #F0544F, #D81E5B);
+                background-size: 400% 400%;
+                background-position: 100% 50%;
+            }
+        }
+
+        /* Style the navigation bar */
+nav {
+    font-size: 20px;
+    background-color:#331832;
+    width: 200px; /* Set the width to control the sidebar's size */
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    padding: 20px 0;
+}
+
+/* Style the list items (menu items) */
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav li {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+/* Style the links (anchor tags) */
+nav a {
+    color: #F0544F;
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+    transition: background-color 0.3s;
+}
+
+/* Change the background color of the link when hovered */
+nav a:hover {
+    background-color:#D81E5B;
+    color:#331832;
+}
+    </style>
 </head>
 <body>
-    <h1>WORK IN PROGRESS</h1>
+
+    <div class="contaainer">
+        <h1>Welcome To DataFy</h1>
+    </div>
+    
+    <nav>
+        <ul>
+            <br>
+            <br>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Dashboard</a></li>
+            <li><a href="#">Finance</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+
 </body>
 </html>

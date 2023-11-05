@@ -1,8 +1,11 @@
 from flask import Flask, render_template, request, jsonify
 import json
 from alternatives import maker
+import openai
 
 global_dict = {}
+openai.api_key = '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'
+
 app = Flask(__name__)
 
 # --------------------------------------------------------------------------HOME
@@ -47,6 +50,30 @@ def futurefinance():
     with open("data.json","r",encoding="utf8") as json_file:
         global_dict = json.load(json_file)
     return render_template('futurefinance.html', data=global_dict)
+
+# --------------------------------------------------------------------------CHATBOT FUNCTION
+
+@app.route("/chat")
+def chat():
+    return render_template('chat.html')
+
+
+@app.route("/get", methods=["GET", "POST"])
+def chat_post():
+    msg = request.form["msg"]
+    input = msg
+    return chat_with_bot(input)
+
+
+def chat_with_bot(message):
+    response = openai.Completion.create(
+        engine="text-davinci-003",
+        prompt=f"Financial Bot: {message}",
+        max_tokens=100  
+    )
+    return response.choices[0].text.strip()
+
+
 
 
 
