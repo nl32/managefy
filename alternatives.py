@@ -4,7 +4,7 @@ import json
 
 
 def maker(item, price):
-    openai.api_key = "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"
+    openai.api_key = (os.environ["OPENAI_KEY"])
     response = openai.Completion.create(
         engine="text-davinci-003",
         prompt="""Given the name of the item in paranthesis (""" + item + """), and the price in parenthesis (""" + price + """),

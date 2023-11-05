@@ -1,7 +1,9 @@
 from flask import Flask, render_template, request, jsonify
 import json
 from alternatives import maker
-import openai
+from dotenv import load_dotenv
+
+load_dotenv()
 
 global_dict = {}
 openai.api_key = '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'
@@ -79,7 +81,6 @@ def chat_with_bot(message):
         max_tokens=100
     )
     return response.choices[0].text.strip()
-
 
 if __name__ == '__main__':
     app.run(debug=True)
