@@ -15,6 +15,8 @@
             background:  #D81E5B;
             background-size: 400% 400%;
             font-family: Arial, sans-serif;
+            animation: gradientAnimation 1s linear 1 forwards;
+
         }
 
         .container {
@@ -25,6 +27,7 @@
             font-size: 36px;
             letter-spacing: 4px;
             font-weight: bold;
+            color: black;
         }
 
         .container .buttons {
@@ -44,7 +47,6 @@
 
         nav {
             font-size: 20px;
-            background-color: #331832;
             width: 150px;
             position: fixed;
             top: 0;
@@ -67,17 +69,35 @@
         }
 
         nav a {
-            color: #D81E5B;
+            font-weight: bold;
+            color: black;
             text-decoration: none;
             display: block;
             padding: 10px;
             transition: background-color 0.3s;
+            border-top-right-radius: 75px; /* Adjust the value as needed */
+            border-bottom-right-radius: 75px; /* Adjust the value as needed */
+       
         }
 
         nav a:hover {
             background-color: #D81E5B;
             color: #331832;
         }
+        @keyframes gradientAnimation {
+            0% {
+                background: linear-gradient(-45deg, #C6D8D3, #F0544F, #D81E5B);
+                background-size: 400% 400%;
+                background-position: 0% 50%;
+            }
+            100% {
+                background: linear-gradient(-45deg, #C6D8D3, #F0544F, #D81E5B);
+                background-size: 400% 400%;
+                background-position: 100% 50%;
+            }
+        }
+
+        
     </style>
 </head>
 <body>
