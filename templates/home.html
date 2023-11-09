@@ -1,9 +1,124 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Dashboard</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DataFi | Dashboard</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background:  #D81E5B;
+            background-size: 400% 400%;
+            font-family: Arial, sans-serif;
+            animation: gradientAnimation 1s linear 1 forwards;
+
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        .container h1 {
+            font-size: 36px;
+            letter-spacing: 4px;
+            font-weight: bold;
+            color: black;
+        }
+
+        .container .buttons {
+            margin-top: 20px;
+        }
+
+        .container .buttons a {
+            display: inline-block;
+            background-color: #D81E5B;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 10px;
+        }
+
+        nav {
+            font-size: 20px;
+            width: 150px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            padding: 20px 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        nav li {
+            text-align: center;
+            margin: 25px 0;
+        }
+
+        nav a {
+            font-weight: bold;
+            color: black;
+            text-decoration: none;
+            display: block;
+            padding: 10px;
+            transition: background-color 0.3s;
+            border-top-right-radius: 75px; /* Adjust the value as needed */
+            border-bottom-right-radius: 75px; /* Adjust the value as needed */
+       
+        }
+
+        nav a:hover {
+            background-color: #D81E5B;
+            color: #331832;
+        }
+        @keyframes gradientAnimation {
+            0% {
+                background: linear-gradient(-45deg, #C6D8D3, #F0544F, #D81E5B);
+                background-size: 400% 400%;
+                background-position: 0% 50%;
+            }
+            100% {
+                background: linear-gradient(-45deg, #C6D8D3, #F0544F, #D81E5B);
+                background-size: 400% 400%;
+                background-position: 100% 50%;
+            }
+        }
+
+        
+    </style>
 </head>
 <body>
-    <h1>WORK IN PROGRESS</h1>
+
+<div class="container">
+    <h1>Welcome To DataFi</h1>
+    <div class="buttons">
+        <a href="/login-signup">Login/Signup</a>
+        <a href="/dashboard">Dashboard</a>
+    </div>
+</div>
+
+<nav>
+    <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/dashboard">Dashboard</a></li>
+        <li><a href="/futurefinance">Future Finance</a></li>
+        <li><a href="/list">Alternatives</a></li>
+        <li><a href="/chat">Chatbot</a></li>
+    </ul>
+</nav>
+
 </body>
 </html>

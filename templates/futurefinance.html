@@ -16,10 +16,10 @@
 </head>
 <body>
     <div class="grid-container">
-        {% for key, value in data.items() %}
-        <div class="grid-item">{{ key }}</div> <!-- Display the key in the first column -->
-        <div class="grid-item">{{ value }}</div> <!-- Display the value in the second column -->
-        <div class="grid-item">Column 3</div> <!-- Example of the third column -->
+        {% for item in data %}
+      <div class="grid-item">{{ item["original"]["name"] }} - ${{item["original"]["price"]}}</div> <!-- Display the key in the first column -->
+        <div class="grid-item">{{ item["alternatives"][0]["name"] }} - ${{item["alternatives"][0]["price"]}}</div> <!-- Display the value in the second column -->
+      <div class="grid-item">${{item["original"]["price"]-item["alternatives"][0]["price"]}}</div> <!-- Example of the third column -->
         {% endfor %}
     </div>
 </body>
