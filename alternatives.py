@@ -18,19 +18,23 @@ def maker(item, price):
     chatgpt_response = response.choices[0].text.strip()
     split = chatgpt_response.split(' : ')
 
-    originalItem = [item, price]
+    originalItem = {"name": item, "price": float(price.replace("$", ""))}
 
-    AlternativeItemDict = {}
-    AlternativeItemDict[item] = price
+    AlternativeItemDict = []
 
     for i in range(0, len(split), 2):
         if i + 1 < len(split):
             even_value = split[i]
-            odd_value = split[i + 1]
-            AlternativeItemDict[even_value] = odd_value
+            odd_value = float(split[i + 1])
+            AlternativeItemDict.append(
+                {"name": even_value, "price": odd_value})
 
     print(AlternativeItemDict)
-    return (AlternativeItemDict)
+    ret = {
+        "original": originalItem,
+        "alternatives": AlternativeItemDict
+    }
+    return (ret)
 
 
 if __name__ == "__main__":

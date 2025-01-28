@@ -1,6 +1,7 @@
+import os
 import openai
 
-openai.api_key = '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'
+openai.api_key = (os.environ["OPENAI_KEY"])
 
 def chat_with_bot(message):
     response = openai.Completion.create(
